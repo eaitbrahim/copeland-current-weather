@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "lWKUGaRteOGaBQEiZDacRoZ3foN1j9osJoDHRLB0mqo=",
+  "Source": "CurrentWeatherApi",
+  "BasePath": "_content/CurrentWeatherApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
