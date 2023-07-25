@@ -2,8 +2,8 @@
 The application allows a user to search for current weather conditions by city name, zip code, or coordinates (GPS, reverse geolocation) using the the Open Weather Map API.
 
 # Requirements
-- .Net version 7 or above
-- Node Js 16 or above
+- .Net version 7.0.305
+- Node Js version 16.17.0
 
 # Running the project
 - Set the Open Weather Map Api Key & Base Url by running the following commands
