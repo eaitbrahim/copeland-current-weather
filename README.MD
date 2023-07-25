@@ -14,4 +14,5 @@ The application allows a user to search for current weather conditions by city n
 - In other terminal, navigate to the client app using `cd current-weather-client`
 - Install the npm packages for the client application using `npm install`
 - Run the client using `npm start`
+- Open the browser with Url `http://localhost:3000/`
 
