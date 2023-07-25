@@ -7,6 +7,10 @@ namespace CurrentWeatherApi.Data
         public IEnumerable<Weather> Weather { get; set; }
 
         public Main Main { get; set; }
+
+        public Wind Wind { get; set; }
+
+        public double Dt { get; set; }
     }
 
     public class Main
@@ -17,7 +21,7 @@ namespace CurrentWeatherApi.Data
 
         public decimal Pressure { get; set; }
 
-        public int Himidity { get; set; }
+        public int Humidity { get; set; }
 
     }
 
@@ -26,5 +30,10 @@ namespace CurrentWeatherApi.Data
         public string Main { get; set; }
 
         public string Description { get; set; }
+    }
+
+    public class Wind
+    {
+        public decimal Speed { get; set; }
     }
 }

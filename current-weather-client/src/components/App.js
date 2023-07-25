@@ -13,7 +13,7 @@ function App() {
   const fetchCurrentWeather = async () => {
     const response = await axios.get("http://localhost:5277/api/v1/currentWeatherByCoord/43.551/-87.9876");
     // DEV ONLY!
-    await pause(10000);
+    await pause(1000);
 
     setWeather(response.data);
     setIsLoading(false);
