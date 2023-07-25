@@ -4,6 +4,7 @@ using CurrentWeatherApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddProblemDetails();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddHttpClient<IOpenWeatherService, OpenWeatherService>(client => 
 {
@@ -12,6 +13,8 @@ builder.Services.AddHttpClient<IOpenWeatherService, OpenWeatherService>(client =
 
 var app = builder.Build();
 var appId = builder.Configuration["OpenWeatherId"];
+app.UseExceptionHandler();
+app.UseStatusCodePages();
 
 app.MapGet("api/v1/currentWeatherByCity/{city}",  async (string city, IMapper mapper, IOpenWeatherService weatherSvc) =>
 {
