@@ -19,4 +19,16 @@ app.MapGet("api/v1/currentWeatherByCity/{city}",  async (string city, IMapper ma
     return Results.Ok(mapper.Map<WeatherReadDto>(weatherData)); 
 });
 
+app.MapGet("api/v1/currentWeatherByZip/{zip}",  async (string zip, IMapper mapper, IOpenWeatherService weatherSvc) =>
+{
+    var weatherData = await weatherSvc.GetCurrentWeather($"/data/2.5/weather?zip={zip}&appid={appId}");
+    return Results.Ok(mapper.Map<WeatherReadDto>(weatherData)); 
+});
+
+app.MapGet("api/v1/currentWeatherByCoord/{lat}/{lon}",  async (decimal lat, decimal lon, IMapper mapper, IOpenWeatherService weatherSvc) =>
+{
+    var weatherData = await weatherSvc.GetCurrentWeather($"/data/2.5/weather?lat={lat}&lon={lon}&appid={appId}");
+    return Results.Ok(mapper.Map<WeatherReadDto>(weatherData)); 
+});
+
 app.Run();
