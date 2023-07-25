@@ -1,7 +1,7 @@
 
 function App() {
   return (
-    <div>
+    <div className="container mx-auto">
      <h1>hi</h1>
     </div>
   );
