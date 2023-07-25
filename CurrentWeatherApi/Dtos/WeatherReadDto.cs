@@ -12,6 +12,10 @@ namespace CurrentWeatherApi.Dtos
 
         public decimal Pressure { get; set; }
 
-        public int Himidity { get; set; }
+        public int Humidity { get; set; }
+
+        public decimal WindSpeed { get; set; }
+
+        public DateTime  TimeDataCalculation { get; set; }
     }
 }
