@@ -13,10 +13,10 @@ builder.Services.AddHttpClient<IOpenWeatherService, OpenWeatherService>(client =
 var app = builder.Build();
 var appId = builder.Configuration["OpenWeatherId"];
 
-app.Run();
-
 app.MapGet("api/v1/currentWeatherByCity/{city}",  async (string city, IMapper mapper, IOpenWeatherService weatherSvc) =>
 {
-    var weatherData = await weatherSvc.GetCurrentWeather($"q={city}&appid={appId}");
+    var weatherData = await weatherSvc.GetCurrentWeather($"/data/2.5/weather?q={city}&appid={appId}");
     return Results.Ok(mapper.Map<WeatherReadDto>(weatherData)); 
 });
+
+app.Run();
