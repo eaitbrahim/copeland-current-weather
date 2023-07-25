@@ -10,6 +10,7 @@ function App() {
   const [ error, setError ] = useState('');
   const [ searchOption, setSearchOption ] = useState('City');
   const [ location, setLocation ] = useState('');
+  const [ placeholder, setPlaceholder ] = useState('New York');
 
   const apiUrl = 'http://localhost:5277/api/v1/';
 
@@ -46,6 +47,21 @@ function App() {
             setSearchOption('City');
           });
   }
+
+  const onChange = (event) => {
+    setSearchOption(event.target.value);
+    switch(event.target.value){
+      case 'City':
+        setPlaceholder('New York');
+        break;
+      case 'Zip':
+        setPlaceholder('43551');
+        break;
+      case 'Coord':
+      default:
+        setPlaceholder('41.65424619050698, -83.53740534314433');
+    }
+  }
   return (
     <div className="bg-blue-200 min-h-screen flex items-center">
       <div className="w-full">
@@ -59,24 +75,24 @@ function App() {
               
               <div className="mb-5">
                 <span>
-                <input id="city" type="radio" value="City" checked={searchOption === 'City'} onChange={e => setSearchOption(e.target.value)}/> 
-                <label className="ml-2" htmlFor="city">City</label>
+                  <input id="city" type="radio" value="City" checked={searchOption === 'City'} onChange={onChange}/> 
+                  <label className="ml-2" htmlFor="city">City</label>
                 </span>
 
                 <span>
-                  <input className="ml-5" id="zip" type="radio" value="Zip" checked={searchOption === 'Zip'} onChange={e => setSearchOption(e.target.value)}/>
+                  <input className="ml-5" id="zip" type="radio" value="Zip" checked={searchOption === 'Zip'} onChange={onChange}/>
                   <label className="ml-2" htmlFor="zip">Zip</label>
                 </span>
 
                 <span>
-                  <input className="ml-5" id="coord" type="radio" value="Coord" checked={searchOption === 'Coord'} onChange={e => setSearchOption(e.target.value)}/> 
+                  <input className="ml-5" id="coord" type="radio" value="Coord" checked={searchOption === 'Coord'} onChange={onChange}/> 
                   <label className="ml-2" htmlFor="coord">Latitude & Longitude</label>
                 </span>
               </div>
 
               
               <div className="mb-5">
-                <input className="border border-black-300 shadow p-3 w-full rounded" placeholder="Toledo or 43551 0r 41.65424619050698, -83.53740534314433" value={location} onChange={(e) => setLocation(e.target.value)} /> 
+                <input className="border border-black-300 shadow p-3 w-full rounded" placeholder={placeholder} value={location} onChange={(e) => setLocation(e.target.value)} /> 
               </div>
               
               <button type="submit" className={classNames("block w-full bg-blue-500 text-white font-bold p-4 rounded-lg", { "opaticty:80": isLoading})} 
