@@ -1,4 +1,4 @@
-namespace CurrentWeatherApi.Properties.Data
+namespace CurrentWeatherApi.Data
 {
   public class OpenWeatherResponse
     {
