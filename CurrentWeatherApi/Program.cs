@@ -10,9 +10,17 @@ builder.Services.AddHttpClient<IOpenWeatherService, OpenWeatherService>(client =
 {
     client.BaseAddress = new Uri(builder.Configuration["OpenWeatherBaseUrl"]);
 });
+builder.Services.AddCors(opt => 
+{
+    opt.AddPolicy("CorsPolicy", policy => 
+    {
+        policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
+    });
+});
 
 var app = builder.Build();
 var appId = builder.Configuration["OpenWeatherId"];
+app.UseCors("CorsPolicy");
 app.UseExceptionHandler();
 app.UseStatusCodePages();
 
