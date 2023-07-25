@@ -12,35 +12,35 @@ function CurrentWeather({ isLoading, error, weather}){
   return (
     <div className="mb-2 boarder rounded">
       <div className="flex p-2 justify-between items-center cursor-pointer">
-       { weather.timeDataCalculation}
+        { weather.timeDataCalculation}
       </div>
 
       <div className="flex p-2 justify-between items-center cursor-pointer">
-       { weather.name}
+        { weather.name}
       </div>
 
       <div className="flex p-2 justify-between items-center cursor-pointer">
-       { weather.temp} Fahrenheit
+        { weather.temp} Fahrenheit
       </div>
 
       <div className="flex p-2 justify-between items-center cursor-pointer">
-       { weather.feelsLike} Fahrenheit
+        { weather.feelsLike} Fahrenheit
       </div>
 
       <div className="flex p-2 justify-between items-center cursor-pointer">
-       { weather.description}
+        { weather.description}
       </div>
 
       <div className="flex p-2 justify-between items-center cursor-pointer">
-       { weather.pressure} hPa
+        { weather.pressure} hPa
       </div>
 
       <div className="flex p-2 justify-between items-center cursor-pointer">
-       { weather.humidity} %
+        { weather.humidity} %
       </div>
 
       <div className="flex p-2 justify-between items-center cursor-pointer">
-       { weather.speed} %
+        { weather.windSpeed} %
       </div>
     </div>
     );
