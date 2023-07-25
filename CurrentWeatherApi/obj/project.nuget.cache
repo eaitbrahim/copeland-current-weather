@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "ag1Z3edOTTmMS/6cjezbIPT3P+BkAZtTtZt+V406PRZO/0nGl8aorArxoIFtCn8eKUI3RBpc6c59HRVzNvuy4g==",
+  "dgSpecHash": "ejNlAO5wDlpPqswTkKNBGQNLZx2aGnW2VohCwWBupY4RzZ8dEpaLI39NRhKqgtk6mwb0K3CAzQNKwJTyX22BQQ==",
   "success": true,
   "projectFilePath": "/Users/elmehdiaitbrahim/Dev/copeland/copeland-current-weather/CurrentWeatherApi/CurrentWeatherApi.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/elmehdiaitbrahim/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/elmehdiaitbrahim/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "/Users/elmehdiaitbrahim/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/Users/elmehdiaitbrahim/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/Users/elmehdiaitbrahim/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "/Users/elmehdiaitbrahim/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "/Users/elmehdiaitbrahim/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
