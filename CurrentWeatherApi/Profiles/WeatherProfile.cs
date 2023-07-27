@@ -37,6 +37,12 @@ public class WeatherProfile: Profile
             {
                 opt.MapFrom(src => new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds( src.Dt ).ToLocalTime());
             });
+
+            CreateMap<ForcastResponse, ForcastReadDto>()
+            .ForMember(dest => dest.Name, opt =>
+            {
+                opt.MapFrom(src => src.City.Name);
+            });
         }
     }
 }
