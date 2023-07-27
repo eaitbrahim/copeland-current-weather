@@ -44,8 +44,9 @@ app.MapGet("api/v1/currentWeatherByCoord/{lat}/{lon}",  async (decimal lat, deci
 
 app.MapGet("api/v1/forcastWeather/{lat}/{lon}",  async (decimal lat, decimal lon, IMapper mapper, IOpenWeatherService weatherSvc) =>
 {
-    var weatherData = await weatherSvc.GetCurrentWeather($"/data/2.5/forecast?lat={lat}&lon={lon}&appid={appId}&units=imperial");
-    return Results.Ok(mapper.Map<WeatherReadDto>(weatherData)); 
+    var weatherData = await weatherSvc.GetForcastWeather($"/data/2.5/forecast?lat={lat}&lon={lon}&appid={appId}&units=imperial");
+    
+    return Results.Ok(mapper.Map<IEnumerable<WeatherReadDto>>(weatherData.List)); 
 });
 
 app.Run();
