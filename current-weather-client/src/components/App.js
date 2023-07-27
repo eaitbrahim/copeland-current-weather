@@ -10,6 +10,7 @@ function App() {
   const [ error, setError ] = useState('');
   const [ searchOption, setSearchOption ] = useState('City');
   const [ location, setLocation ] = useState('');
+
   const [ placeholder, setPlaceholder ] = useState('New York');
 
   const apiUrl = 'http://localhost:5277/api/v1/';
@@ -25,6 +26,9 @@ function App() {
       case 'Zip':
         endPoint = `currentWeatherByZip/${location}`;
         break;
+      case 'Forcast':
+          endPoint = `forcastWeather/${location.split(',')[0].trim()}/${location.split(',')[1].trim()}`;
+          break;
       case 'Coord':
       default:
         endPoint = `currentWeatherByCoord/${location.split(',')[0].trim()}/${location.split(',')[1].trim()}`;
@@ -58,6 +62,7 @@ function App() {
         setPlaceholder('43551');
         break;
       case 'Coord':
+      case 'Forcast':
       default:
         setPlaceholder('41.65424619050698, -83.53740534314433');
     }
@@ -88,11 +93,17 @@ function App() {
                   <input className="ml-5" id="coord" type="radio" value="Coord" checked={searchOption === 'Coord'} onChange={onChange}/> 
                   <label className="ml-2" htmlFor="coord">Latitude & Longitude</label>
                 </span>
+
+                <span>
+                  <input className="ml-5" id="forcast" type="radio" value="Forcast" checked={searchOption === 'Forcast'} onChange={onChange}/> 
+                  <label className="ml-2" htmlFor="forcast">5 day / 3 hour forecast </label>
+                </span>
               </div>
 
               
               <div className="mb-5">
-                <input className="border border-black-300 shadow p-3 w-full rounded" placeholder={placeholder} value={location} onChange={(e) => setLocation(e.target.value)} /> 
+                <input className="border border-black-300 shadow p-3 w-full rounded" placeholder={placeholder} 
+                  value={location} onChange={(e) => setLocation(e.target.value)} /> 
               </div>
               
               <button type="submit" className={classNames("block w-full bg-blue-500 text-white font-bold p-4 rounded-lg", { "opaticty:80": isLoading})} 
